@@ -8,5 +8,7 @@ COPY --from=composer:2.8 /usr/bin/composer /usr/bin/composer
 
 COPY ./000-default.conf /etc/apache2/sites-available
 
+RUN a2enmod rewrite
+
 WORKDIR /var/www/
 

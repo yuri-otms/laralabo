@@ -6,9 +6,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8001:80"
+    environment:
+      TZ: 'Asia/Tokyo'
     volumes:
       - ./app:/var/www
-
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
   mysql:
     container_name: laralabo_mysql
     build:
